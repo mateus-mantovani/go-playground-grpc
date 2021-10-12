@@ -1,4 +1,4 @@
-This is just a GO playground. Inside this project there is a stream request, take a look.
+This is just a GO playground. Inside this project there is a server stream response and client stream, take a look.
 
 To compile the *.proto files use the following command:
 protoc --proto_path=proto proto/*.proto --go_out=pb --go-grpc_out=pb
