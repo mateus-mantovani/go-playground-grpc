@@ -1,0 +1,20 @@
+// protoc --proto_path=proto proto/*.proto --go_out=pb --go-grpc_out=pb
+syntax = "proto3";
+package pb;
+option go_package = ".;pb";
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message UserResultStream {
+    string status = 1;
+    User user = 2;
+}
+
+service UserService {
+    rpc AddUser (User) returns (User);
+    rpc AddUserVerbose (User) returns (stream UserResultStream);
+}
